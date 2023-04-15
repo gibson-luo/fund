@@ -41,6 +41,7 @@ public class FundController {
             LOGGER.debug("dataSet: {}", dataSet.size());
 
             for(LoadFundRecord item : dataSet){
+                // if a load ID is observed more than once for a particular user, all but the first instance can be ignored (i.e. no response given).
                 if(loadFundRecordService.isExist(item.getId(), item.getCustomerId())){
                     LOGGER.debug("existing ID: " + item.getId());
                     continue;
