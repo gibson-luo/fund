@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: postgres
+    password: pass
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    flyway:
+      url: jdbc:postgresql://127.0.0.1:5432
+      schemas: postgres
+      user: postgres
+      password: pass
+      locations: classpath:db/migration
+
+mybatis:
+  type-aliases-package: gibson.exam.fund.pojo   #   model files

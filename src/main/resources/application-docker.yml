@@ -1,0 +1,20 @@
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: ${database_username}
+    password: ${database_password}
+    url: ${database_url}
+    driver-class-name: org.postgresql.Driver
+    flyway:
+      url: ${flyway_url}
+      schemas: ${flyway_database}
+      user: ${flyway_user}
+      password: ${flyway_password}
+      locations: classpath:db/migration
+
+mybatis:
+  type-aliases-package: gibson.exam.fund.pojo   #   model files
